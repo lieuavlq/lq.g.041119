@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com http://lvgames.net https://www.googleapis.com https://googleads.g.doubleclick.net 'unsafe-inline' 'unsafe-eval'; style-src 'self' http://lvgames.net 'unsafe-inline'; media-src *; img-src 'self' https://lienquan.garena.vn http://lvgames.net https://www.googleapis.com data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="shared/css/reset.css">
+        <link rel="stylesheet" href="shared/css/animate.css">
+        <link rel="stylesheet" href="shared/css/main.css">
+        <link rel="stylesheet" href="http://lvgames.net/cnlq_app/common/cnlq.css">
+        <title>Sổ Tay AOV LAVU</title>
+    </head>
+    <body id="deviceready" data-appversion="10001">
+        <div id="wrap-disconnect" class="lvg_popup tp02" data-popup="disable">
+          <div class="content">
+            <p class="ttl">Hiện máy bạn không có kết nối mạng!!</p>
+            <p><a href="#" class="lvg_popup_link lvg_popup_out">Thoát ra</a></p>
+          </div>
+        </div>
+        <div class="lvg_main_img"></div>
+        <div id="wrap-countdown"></div>
+        <!-- Start of first page: #main -->
+        <div data-role="page" id="main">
+          <div data-role="header">
+            <h1>Sổ tay lavu<span>Chào mừng đến với sổ tay</span></h1>
+            <a href="#menu-left" class="lvg_popup_btn lvg_menu_btn">Menu</a>
+          </div>
+          <div class="lvg_holder">
+            <div class="lvg_img_main animated tada"><img src="shared/img/img_main.png" alt=""></div>
+            <div class="lvg_champs_class"><span data-value="warrior">Đấu sĩ</span><span data-value="tank">Đỡ đòn</span><span data-value="assassin">Sát thủ</span><span data-value="mage">Pháp sư</span><span data-value="marksman">Xạ thủ</span><span data-value="support">Trợ thủ</span></div>
+            <div class="lvg_champ_quote">Tướng Mới | Miễn phí</div>
+            <div class="lvg_select_champs">
+              <input id="lvg_filter_champs" data-type="search" class="ui-screen-hidden">
+              <div class="lvg_champs_wrap"></div>
+              <div id="all_champs" data-role="listview" data-filter="true" data-filter-reveal="true" data-input="#lvg_filter_champs" class="lvg_champs"></div>
+            </div>
+          </div>
+        </div><!-- /main -->
+        <!-- Start of first page: #news -->
+        <div data-role="page" id="news">
+          <div data-role="header" class="top-fixed">
+            <a href="#main" class="ui-btn lvg_back_btn">Back</a>
+            <h1>Tin Tức<span>Nóng hổi vừa thổi vừa đọc</span></h1>
+            <a href="#menu-left" class="lvg_popup_btn lvg_menu_btn">Menu</a>
+          </div>
+          <div class="lvg_holder sub">
+            <div class="lvg-news-content"></div>
+          </div>
+        </div><!-- /news -->
+        <!-- Start of first page: #shop -->
+        <div data-role="page" id="shop">
+          <div data-role="header" class="top-fixed">
+            <a href="#main" class="ui-btn lvg_back_btn">Back</a>
+            <h1>Cửa hàng<span>Phụ kiện đồ chơi đủ thứ</span></h1>
+            <a href="#menu-left" class="lvg_popup_btn lvg_menu_btn">Menu</a>
+          </div>
+          <div class="lvg_holder sub">
+            <div class="lvg_shop_page"></div>
+          </div>
+        </div><!-- /shop -->
+
+        <!-- Start all items -->
+        <div class="items-wrap"></div>
+
+        <!-- Start all spells -->
+        <div class="spells-wrap"></div>
+
+        <!-- Start skills hero -->
+        <div class="skills-wrap"></div>
+
+        <!-- Panel left -->
+        <div id="menu-left" class="lvg_popup lvg_menu_wrap"></div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="shared/js/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="shared/js/common.js"></script>
+        <script type="text/javascript" src="shared/js/load_first.js"></script>
+        <script type="text/javascript" src="shared/js/lang-vn.js"></script>
+        <script type="text/javascript" src="shared/js/main.js"></script>
+        <script type="text/javascript" src="shared/js/news.js"></script>
+        <script type="text/javascript" src="http://lvgames.net/cnlq_app/common/cnlq.js"></script>
+    </body>
+</html>
